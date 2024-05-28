@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLife Buddy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>FitLife Buddy</h1>
+    </header>
+    <main>
+        <section id="workout-section">
+            <h2>Today's Workout</h2>
+            <div id="workout-list">
+                <!-- Workout items will be added here dynamically -->
+            </div>
+            <button id="add-workout-btn">Add Workout</button>
+        </section>
+        <section id="nutrition-section">
+            <h2>Today's Nutrition</h2>
+            <div id="nutrition-list">
+                <!-- Nutrition items will be added here dynamically -->
+            </div>
+            <button id="add-nutrition-btn">Add Nutrition</button>
+        </section>
+    </main>
+
+    <!-- Service worker registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                    .then(registration => {
+                        console.log('Service Worker registered:', registration);
+                    })
+                    .catch(error => {
+                        console.log('Service Worker registration failed:', error);
+                    });
+            });
+        }
+    </script>
+    
+    </body>
+</html>
